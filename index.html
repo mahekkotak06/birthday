@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="theme-color" content="#fff7f0">
+    <meta name="description" content="A birthday surprise for Rohan.">
+    <title>For Rohan | A Birthday Surprise</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <main class="welcome-screen chapter is-visible" id="welcome-screen">
+        <div class="sky-glow" aria-hidden="true"></div>
+        <div class="confetti confetti-one" aria-hidden="true"></div>
+        <div class="confetti confetti-two" aria-hidden="true"></div>
+        <div class="confetti confetti-three" aria-hidden="true"></div>
+        <div class="sparkle sparkle-one" aria-hidden="true">✦</div>
+        <div class="sparkle sparkle-two" aria-hidden="true">✧</div>
+
+        <section class="welcome-card" aria-labelledby="welcome-title">
+            <p class="eyebrow">A tiny secret from your favourite person</p>
+            <div class="gift-icon" aria-hidden="true">🎁</div>
+            <h1 id="welcome-title">Hey Rohan... <span aria-hidden="true">👀</span></h1>
+            <p class="intro-copy">I made something special<br>for you.</p>
+            <p class="ready-message" id="ready-message" role="status" aria-live="polite"></p>
+            <button class="primary-button" id="start-button" type="button">
+                <span>Start the surprise</span>
+                <span aria-hidden="true">🎁</span>
+            </button>
+        </section>
+
+        <div class="music-controls" aria-label="Music controls">
+            <audio id="birthday-audio" preload="none" src="music/atlasaudio-birthday-606219.mp3"></audio>
+            <button class="icon-button" id="play-button" type="button" aria-label="Play birthday music" aria-pressed="false">
+                <span aria-hidden="true" id="play-icon">▶</span>
+                <span class="button-label" id="play-label">Play music</span>
+            </button>
+            <button class="icon-button" id="mute-button" type="button" aria-label="Mute birthday music" aria-pressed="false">
+                <span aria-hidden="true" id="mute-icon">🔊</span>
+                <span class="button-label" id="mute-label">Sound on</span>
+            </button>
+        </div>
+
+        <p class="tiny-note">Best experienced with sound on · headphones optional</p>
+    </main>
+
+    <main class="memories-screen chapter" id="memories-screen" hidden>
+        <div class="memories-orbit orbit-one" aria-hidden="true"></div>
+        <div class="memories-orbit orbit-two" aria-hidden="true"></div>
+        <section class="memories-content" aria-labelledby="memories-title">
+            <p class="eyebrow">Chapter two · Rohan in his natural habitat</p>
+            <h2 id="memories-title" tabindex="-1">A little Rohan archive 📸</h2>
+            <p class="memories-intro">Because one photo of you is never enough... and also somehow always enough 😂</p>
+
+            <div class="memory-viewer" aria-live="polite">
+                <div class="photo-frame" id="photo-frame">
+                    <img id="memory-image" src="" alt="">
+                    <div class="photo-fallback" id="photo-fallback" hidden>
+                        <span class="fallback-icon" aria-hidden="true">🖼️</span>
+                        <span>Add Rohan's photo here</span>
+                    </div>
+                </div>
+                <p class="memory-caption" id="memory-caption"></p>
+                <p class="photo-counter" id="photo-counter"></p>
+            </div>
+
+            <div class="memory-controls" aria-label="Memory photo controls">
+                <button class="round-button" id="previous-button" type="button" aria-label="Previous memory">←</button>
+                <button class="round-button" id="next-button" type="button" aria-label="Next memory">→</button>
+            </div>
+            <button class="chapter-button" id="memories-continue" type="button" hidden>Continue <span aria-hidden="true">→</span></button>
+        </section>
+    </main>
+
+    <main class="question-screen chapter" id="question-screen" hidden>
+        <div class="question-stars" aria-hidden="true">✦　✧　✦</div>
+        <section class="question-content" aria-labelledby="question-title">
+            <p class="eyebrow">Chapter three · A very important question</p>
+            <div class="question-mark" aria-hidden="true">❔</div>
+            <h2 id="question-title" tabindex="-1">Rohan, are you ready for what's next? <span aria-hidden="true">👀</span></h2>
+            <p class="question-note" id="question-note" role="status" aria-live="polite">Choose wisely. There are consequences. Maybe.</p>
+            <div class="answer-area">
+                <button class="answer-button yes-button" id="yes-button" type="button">YES <span aria-hidden="true">❤️</span></button>
+                <button class="answer-button no-button" id="no-button" type="button">NO <span aria-hidden="true">😏</span></button>
+            </div>
+        </section>
+    </main>
+
+    <main class="message-screen chapter" id="message-screen" hidden>
+        <div class="message-sparkle sparkle-message-one" aria-hidden="true">✦</div>
+        <div class="message-sparkle sparkle-message-two" aria-hidden="true">✧</div>
+        <section class="message-content" aria-labelledby="message-title">
+            <p class="eyebrow">Chapter four · A few words for you</p>
+            <div class="letter-seal" aria-hidden="true">💌</div>
+            <h2 id="message-title" tabindex="-1">For my favourite Rohan</h2>
+            <div class="message-paper">
+                <p class="birthday-message" id="birthday-message" role="status" aria-live="polite"></p>
+                <span class="typing-cursor" id="typing-cursor" aria-hidden="true"></span>
+            </div>
+            <p class="message-note" id="message-note" aria-live="polite"></p>
+            <button class="chapter-button" id="more-button" type="button">There's more <span aria-hidden="true">👀</span></button>
+        </section>
+    </main>
+
+    <main class="quiz-screen chapter" id="quiz-screen" hidden>
+        <div class="quiz-confetti quiz-confetti-one" aria-hidden="true"></div>
+        <div class="quiz-confetti quiz-confetti-two" aria-hidden="true"></div>
+        <section class="quiz-content" aria-labelledby="quiz-title">
+            <p class="eyebrow">Chapter five · No skipping allowed</p>
+            <div class="quiz-badge" aria-hidden="true">🧠</div>
+            <h2 id="quiz-title" tabindex="-1">Okay Rohan... let's see how well you know me 😏</h2>
+            <p class="quiz-progress" id="quiz-progress" aria-live="polite"></p>
+
+            <div class="quiz-card" id="quiz-card">
+                <h3 class="quiz-question" id="quiz-question"></h3>
+                <div class="quiz-options" id="quiz-options" role="group" aria-label="Answer options"></div>
+                <p class="quiz-feedback" id="quiz-feedback" role="status" aria-live="polite"></p>
+                <button class="chapter-button quiz-continue" id="quiz-continue" type="button" hidden>Next question <span aria-hidden="true">→</span></button>
+            </div>
+
+            <div class="quiz-result" id="quiz-result" hidden>
+                <p class="result-kicker">Quiz complete 🎉</p>
+                <p class="result-score" id="result-score"></p>
+                <p class="result-message" id="result-message"></p>
+                <button class="chapter-button" id="quiz-finish" type="button" hidden>Continue <span aria-hidden="true">→</span></button>
+            </div>
+        </section>
+    </main>
+
+    <main class="final-screen chapter" id="final-screen" hidden>
+        <audio id="final-audio" preload="none" src="music/WhatsApp Audio 2026-10-10 at 2.28.13 PM.mpeg"></audio>
+        <div class="final-stars" aria-hidden="true">✦　✧　✦</div>
+        <div class="confetti-layer" id="confetti-layer" aria-hidden="true"></div>
+        <section class="final-content" aria-labelledby="final-title">
+            <p class="eyebrow">The final chapter · With love, your bestie</p>
+            <div class="final-heart" aria-hidden="true">❤️</div>
+            <h2 id="final-title" tabindex="-1">Thank You, Rasmalai ❤️</h2>
+            <p class="final-message" id="final-message"></p>
+
+            <div class="final-photo-frame" id="final-photo-frame">
+                <img id="final-photo" src="images/pic 7 cleaned.jpg" alt="A final birthday photo of Rasmalai">
+            </div>
+
+            <p class="birthday-signoff">Happy Birthday, Rasmalai! <span aria-hidden="true">🎂❤️</span></p>
+            <p class="expiry-line">Best friends. No expiry date. <span aria-hidden="true">🫶</span></p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
